@@ -17,9 +17,10 @@
 
     '08/14/2023
     'All Needed Arrays for less conditions. 
-    'Money for Invalid Input saving, FormLoad for Initial Values (to prevent error)
+    'Money for Invalid Input saving, FormLoad/ResetLoad for Initial Values (to prevent error)
     Dim Money As Decimal
     Dim FormLoad As Boolean = False
+    Dim ResetLoad As Boolean = False
     Dim ImageArray() As Image = {My.Resources.AUD, My.Resources.BHD, My.Resources.CNY, My.Resources.EUR, My.Resources.INR, My.Resources.JPY, My.Resources.KWD, My.Resources.OMR, My.Resources.PHP, My.Resources.USD}
     Dim ISOArray() As String = {"AUD", "BHD", "CNY", "EUR", "INR", "JPY", "KWD", "OMR", "PHP", "USD"}
     Dim ExchangeRateToAUD() As Decimal = {1, 0.24, 4.59, 0.6, 52.45, 94.32, 0.19, 0.24, 35.72, 0.63}
@@ -54,14 +55,15 @@
     End Function
     'Calculations
     Sub CalculateExchangeRate(ByVal FromCurrencyIndex As Integer, ByVal ToCurrencyIndex As Integer, ByVal InputAnswer As String)
-        If FormLoad = False Then
+        If FormLoad = False Or ResetLoad = True Then
+            ResetLoad = False
             Return
         End If
 
         Dim value As Decimal
         Dim DisplaySymbol As String = ISOArray(ToCurrencyIndex)
 
-        If FromInput.Text = "Enter a number" Then
+        If FromInput.Text = "Enter amount" Then
             ToAnswer.Text = ChangeFormat(0.00, DisplaySymbol)
             Return
         End If
@@ -116,13 +118,13 @@
         FromPic.Image = My.Resources.AUD
         ToPic.Image = My.Resources.AUD
         ToAnswer.Text = "0.00 AUD"
-        FromInput.Text = "Enter a number"
+        FromInput.Text = "Enter amount"
         FromInput.ForeColor = Color.Gray
         FormLoad = True
     End Sub
 
     Private Sub TextBox1_GotFocus(sender As Object, e As EventArgs) Handles FromInput.GotFocus
-        If FromInput.Text = "Enter a number" Then
+        If FromInput.Text = "Enter amount" Then
             FromInput.Text = ""
             FromInput.ForeColor = Color.Black
         End If
@@ -130,12 +132,12 @@
 
     Private Sub TextBox1_LostFocus(sender As Object, e As EventArgs) Handles FromInput.LostFocus
         If FromInput.Text = "" Then
-            FromInput.Text = "Enter a number"
+            FromInput.Text = "Enter amount"
             FromInput.ForeColor = Color.Gray
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Switch.Click
+    Private Sub Switch_Click(sender As Object, e As EventArgs) Handles Switch.Click
         Dim PHolder As Integer = FromCurrency.SelectedIndex
         FromCurrency.SelectedIndex = ToCurrency.SelectedIndex
         ToCurrency.SelectedIndex = PHolder
@@ -147,5 +149,16 @@
         End If
         Loading_ForEx_Form.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Reset_click(sender As Object, e As EventArgs) Handles Reset.Click
+        ResetLoad = True
+        FromCurrency.SelectedIndex = 0
+        ToCurrency.SelectedIndex = 0
+        FromPic.Image = My.Resources.AUD
+        ToPic.Image = My.Resources.AUD
+        ToAnswer.Text = "0.00 AUD"
+        FromInput.Text = "Enter amount"
+        FromInput.ForeColor = Color.Gray
     End Sub
 End Class

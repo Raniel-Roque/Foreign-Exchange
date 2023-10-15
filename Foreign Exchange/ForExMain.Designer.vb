@@ -28,11 +28,12 @@ Partial Class ForExMain
         Me.FromInput = New System.Windows.Forms.TextBox()
         Me.ToAnswer = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ForeignExchangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Switch = New System.Windows.Forms.Button()
         Me.ToPic = New System.Windows.Forms.PictureBox()
         Me.FromPic = New System.Windows.Forms.PictureBox()
-        Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Reset = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ToPic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FromPic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,8 +92,20 @@ Partial Class ForExMain
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'HomeToolStripMenuItem
+        '
+        Me.HomeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.HomeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.HomeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.HomeToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.HomeToolStripMenuItem.Image = CType(resources.GetObject("HomeToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
+        Me.HomeToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(28, 24)
+        '
         'ForeignExchangeToolStripMenuItem
         '
+        Me.ForeignExchangeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ForeignExchangeToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeignExchangeToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ForeignExchangeToolStripMenuItem.Name = "ForeignExchangeToolStripMenuItem"
@@ -103,6 +116,8 @@ Partial Class ForExMain
         '
         Me.Switch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Switch.FlatAppearance.BorderSize = 0
+        Me.Switch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Switch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan
         Me.Switch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Switch.Image = Global.Foreign_Exchange.My.Resources.Resources.Arrow
         Me.Switch.Location = New System.Drawing.Point(267, 64)
@@ -129,16 +144,20 @@ Partial Class ForExMain
         Me.FromPic.TabIndex = 5
         Me.FromPic.TabStop = False
         '
-        'HomeToolStripMenuItem
+        'Reset
         '
-        Me.HomeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.HomeToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.HomeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.HomeToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.HomeToolStripMenuItem.Image = CType(resources.GetObject("HomeToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
-        Me.HomeToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(28, 24)
+        Me.Reset.BackColor = System.Drawing.Color.Salmon
+        Me.Reset.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Salmon
+        Me.Reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon
+        Me.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Reset.Font = New System.Drawing.Font("Microsoft Tai Le", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Reset.Location = New System.Drawing.Point(267, 230)
+        Me.Reset.Name = "Reset"
+        Me.Reset.Size = New System.Drawing.Size(57, 23)
+        Me.Reset.TabIndex = 8
+        Me.Reset.Text = "Reset"
+        Me.Reset.UseVisualStyleBackColor = False
         '
         'ForExMain
         '
@@ -146,6 +165,7 @@ Partial Class ForExMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(595, 267)
+        Me.Controls.Add(Me.Reset)
         Me.Controls.Add(Me.Switch)
         Me.Controls.Add(Me.ToPic)
         Me.Controls.Add(Me.FromPic)
@@ -178,4 +198,5 @@ Partial Class ForExMain
     Friend WithEvents FromPic As PictureBox
     Friend WithEvents ToPic As PictureBox
     Friend WithEvents Switch As Button
+    Friend WithEvents Reset As Button
 End Class
