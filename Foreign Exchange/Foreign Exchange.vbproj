@@ -80,10 +80,17 @@
       <DependentUpon>ForExMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoadForEx.Designer.vb">
+      <DependentUpon>LoadForEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadForEx.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +106,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ForExMain.resx">
       <DependentUpon>ForExMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadForEx.resx">
+      <DependentUpon>LoadForEx.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -118,6 +128,45 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUD.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BHD.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CNY.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EUR.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INR.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JPY.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KWD.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OMR.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PHP.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USD.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoneyIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
