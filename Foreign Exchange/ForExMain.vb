@@ -152,11 +152,16 @@
     End Sub
 
     Private Sub Reset_click(sender As Object, e As EventArgs) Handles Reset.Click
-        ResetLoad = True
-        FromCurrency.SelectedIndex = 0
-        ToCurrency.SelectedIndex = 0
-        ToAnswer.Text = "0.00 AUD"
-        FromInput.Text = "Enter amount"
-        FromInput.ForeColor = Color.Gray
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to reset?", "Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        If result = DialogResult.Yes Then
+            ' Reset the values
+            ResetLoad = True
+            FromCurrency.SelectedIndex = 0
+            ToCurrency.SelectedIndex = 0
+            ToAnswer.Text = "0.00 AUD"
+            FromInput.Text = "Enter amount"
+            FromInput.ForeColor = Color.Gray
+        End If
     End Sub
 End Class
