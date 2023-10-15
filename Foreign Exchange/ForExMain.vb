@@ -1,4 +1,9 @@
 ﻿Public Class ForExMain
+    'Programmer: Roque, Raniel Christian B
+    'Date: October 15 2023
+    'BSIT 2A
+
+    'NOTE: PERFORMANCE STARTUP ISSUE DUE TO GIFS (Too large haha sorry :< )
     'Australian Dollar (AUD)
     'Bahraini Dinar(BHD)
     'Chinese Yuan(CNY)
