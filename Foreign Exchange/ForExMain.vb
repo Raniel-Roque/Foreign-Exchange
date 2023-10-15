@@ -155,8 +155,6 @@
         ResetLoad = True
         FromCurrency.SelectedIndex = 0
         ToCurrency.SelectedIndex = 0
-        FromPic.Image = My.Resources.AUD
-        ToPic.Image = My.Resources.AUD
         ToAnswer.Text = "0.00 AUD"
         FromInput.Text = "Enter amount"
         FromInput.ForeColor = Color.Gray
